@@ -1,1 +1,1 @@
-packages = ["requests", "pyodide-http", "pandas", "matplotlib"]
+packages = ["requests", "pyodide-http", "pandas", "matplotlib", "seaborn"]
