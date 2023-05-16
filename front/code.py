@@ -64,14 +64,15 @@ url_filename = "https://pystravan-gold.s3.amazonaws.com/data.csv"
 data = pd.read_csv(open_url(url_filename))
 
 data = data.sort_values("Total", ascending=False)
+columns = data.columns
 
 contents_element = document.getElementById("content")
 for i in range(len(data)):
 	week_labels_dict = {
-		'week_1_lbl' : data.iloc[0,3],
-		'week_2_lbl' : data.iloc[0,5],
-		'week_3_lbl' : data.iloc[0,7],
-		'week_4_lbl' : data.iloc[0,9]
+		'week_1_lbl' : columns[3],
+		'week_2_lbl' : columns[5],
+		'week_3_lbl' : columns[7],
+		'week_4_lbl' : columns[9]
 	}
 	week_1 = data.iloc[i,3] if string_has_digits(data.iloc[i,3]) else "0"
 	week_2 = data.iloc[i,5] if string_has_digits(data.iloc[i,5]) else "0"
